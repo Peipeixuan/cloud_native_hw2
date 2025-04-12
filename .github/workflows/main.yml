@@ -1,0 +1,30 @@
+name: Python Test
+
+on:
+  push:
+    branches:
+      - hw1-p
+      - hw1-f
+
+jobs:
+  run-python-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies (if any)
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run Python script
+        run: python main.py
+
+      - name: Post Run Message
+        run: echo "✅ Action completed successfully (if not failed above)"
