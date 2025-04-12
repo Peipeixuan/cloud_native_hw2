@@ -5,7 +5,7 @@ def is_positive_number(num: int) -> bool:
 
 if __name__ == "__main__":
     # 測試輸入
-    test_input = 5 
+    test_input = -999
     result = is_positive_number(test_input)
     print(f"Input: {test_input}, Result: {result}")
     if not result:
